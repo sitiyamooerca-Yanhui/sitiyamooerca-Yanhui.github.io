@@ -37,7 +37,7 @@ body {
     z-index: 1;
     pointer-events: none;
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
-    animation: grain 25s steps(10) infinite;
+    animation: grain 50s steps(10) infinite;
 }
 
 @keyframes grain {
@@ -393,14 +393,37 @@ body {
     border-left: 3px solid var(--accent-gold);
 }
 
-/* 系列标题（小） */
-.series-title {
+/* 媒介类型标题（文字/视觉） */
+.media-title {
     font-family: var(--serif-zh);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--frost-white);
+    padding-left: 0.8rem;
+    border-left: 2px solid rgba(139, 159, 181, 0.5);
+}
+
+/* 同人圈标题 */
+.fandom-title {
+    font-family: var(--serif-zh);
+    font-size: 1.3rem;
     font-weight: 500;
     margin-top: 2rem;
     margin-bottom: 1rem;
     color: var(--silver-mist);
+    padding-left: 0.6rem;
+}
+
+/* 系列标题（小） */
+.series-title {
+    font-family: var(--serif-zh);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgba(139, 159, 181, 0.9);
     padding-left: 0.5rem;
 }
 
