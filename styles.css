@@ -492,6 +492,21 @@ body {
     font-weight: 500;
 }
 
+/* 黑幕效果 - 默认隐藏，悬停显示 */
+.spoiler {
+    background: var(--midnight-blue);
+    color: var(--midnight-blue);
+    padding: 0 0.2rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    cursor: help;
+}
+
+.spoiler:hover {
+    background: rgba(26, 58, 82, 0.4);
+    color: var(--frost-white);
+}
+
 /* Gallery Grid for Images */
 .gallery-grid {
     display: grid;
