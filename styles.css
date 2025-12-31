@@ -439,10 +439,13 @@ body {
     background: rgba(26, 58, 82, 0.4);
     border: 1px solid rgba(139, 159, 181, 0.2);
     border-radius: 4px;
-    padding: 2rem;
+    padding: 3rem 2rem 2rem 2rem;  /* 顶部加大到3rem，给系列标签留空间 */
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
+    min-height: 200px;  /* 设置最小高度 */
+    display: flex;
+    flex-direction: column;
 }
 
 .work-card:hover {
@@ -453,10 +456,11 @@ body {
 
 .work-card h3 {
     font-family: var(--serif-zh);
-    font-size: 1.5rem;
+    font-size: 1.4rem;  /* 稍微缩小标题，避免太长 */
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--frost-white);
+    line-height: 1.4;  /* 增加行高，多行标题更好看 */
 }
 
 .work-card .work-meta {
@@ -471,6 +475,7 @@ body {
     font-weight: 300;
     color: var(--silver-mist);
     line-height: 1.6;
+    flex-grow: 1;  /* 让简介占据剩余空间 */
 }
 
 /* 卡片右上角的系列标签 */
