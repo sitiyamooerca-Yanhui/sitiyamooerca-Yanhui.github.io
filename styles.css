@@ -442,6 +442,7 @@ body {
     padding: 2rem;
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .work-card:hover {
@@ -470,6 +471,20 @@ body {
     font-weight: 300;
     color: var(--silver-mist);
     line-height: 1.6;
+}
+
+/* 卡片右上角的系列标签 */
+.work-card .series-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    color: var(--accent-gold);
+    background: rgba(201, 169, 97, 0.1);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    border-radius: 3px;
+    padding: 0.3rem 0.6rem;
+    font-weight: 500;
 }
 
 /* Gallery Grid for Images */
