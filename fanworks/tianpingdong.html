@@ -32,7 +32,8 @@
             margin: 0.8rem 0;
             border-radius: 4px;
         }
-        /* 黑色框 - 带抖动和闪烁效果 */
+        
+        /* 黑色框 */
         .black {
             background: rgba(20, 30, 45, 0.85);
             border: 1px solid rgba(139, 159, 181, 0.4);
@@ -42,37 +43,123 @@
             border-radius: 4px;
             max-width: 85%;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-            animation: blackBoxGlitch 4s ease-in-out infinite;
+            position: relative;  /* 添加这个，让黑框可以移动 */
         }
         
-        /* 黑色框的抖动闪烁动画 */
-        @keyframes blackBoxGlitch {
-            0%, 90%, 100% {
+        /* 黑色框文字基础样式 */
+        .black p {
+            position: relative;
+        }
+        
+        /* 第1个框 - 立刻开始 */
+        .shake-horizontal {
+            animation: slowShakeWave 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            animation-delay: 0s;
+        }
+        
+        /* 第2个框 - 延迟开始 */
+        .shake-vertical {
+            animation: slowShakeWave 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            animation-delay: 0.3s;
+        }
+        
+        /* 第3个框 - 再延迟一点 */
+        .shake-diagonal {
+            animation: slowShakeWave 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            animation-delay: 0.7s;
+        }
+        
+        /* 第4个框 - 最后开始 */
+        .shake-wave {
+            animation: slowShakeWave 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            animation-delay: 1.1s;
+        }    
+        
+        
+        @keyframes slowShakeHorizontal {
+            0% {
                 transform: translate(0, 0);
-                opacity: 1;
-                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
             }
-            91% {
-                transform: translate(-2px, 1px);
-                opacity: 0.9;
-                box-shadow: 0 0 15px rgba(139, 159, 181, 0.2);
+            25% {
+                transform: translate(-1px, 0);
             }
-            92% {
-                transform: translate(2px, -1px);
-                opacity: 0.95;
-            }
-            93% {
-                transform: translate(-1px, 2px);
-                opacity: 0.85;
-            }
-            94% {
-                transform: translate(1px, -2px);
-                opacity: 1;
-            }
-            95% {
+            50% {
                 transform: translate(0, 0);
-                opacity: 0.9;
-                box-shadow: 0 0 20px rgba(139, 159, 181, 0.3);
+            }
+            75% {
+                transform: translate(1px, 0);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        
+        /* 上下晃动 */
+        @keyframes slowShakeVertical {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(0, -1px);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            75% {
+                transform: translate(0, 1px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        
+        /* 对角晃动 */
+        @keyframes slowShakeDiagonal {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(-0.8px, -0.8px);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            75% {
+                transform: translate(0.8px, 0.8px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        
+        /* 波浪晃动 */
+        @keyframes slowShakeWave {
+            0% {
+                transform: translate(0, 0);
+            }
+            12.5% {
+                transform: translate(-1px, -0.5px);
+            }
+            25% {
+                transform: translate(-1.5px, 0);
+            }
+            37.5% {
+                transform: translate(-1px, 0.5px);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            62.5% {
+                transform: translate(1px, -0.5px);
+            }
+            75% {
+                transform: translate(1.5px, 0);
+            }
+            87.5% {
+                transform: translate(1px, 0.5px);
+            }
+            100% {
+                transform: translate(0, 0);
             }
         }
         
@@ -127,7 +214,7 @@
         .black strong {
             font-weight: 600;
         }
-    </style>
+</style>
 </head>
 <body>
     <div class="grain-overlay"></div>
@@ -159,7 +246,7 @@
             <div class="article-content">
                 <blockquote>
                     <p>长夜将尽。</p>
-                   </blockquote>
+                             </blockquote>
 
                 <div class="grey">
                     <p><strong>■■■：</strong>……你又出现在这里，究竟是为了什么呢？</p>
@@ -553,29 +640,34 @@
                     <p><strong>■■■：</strong>因为那是正当的。而纵使现在，若我要夺去你的性命，你们也无力抵抗。从权力逃脱，一切不便由力量来决定吗。</p>
                 </div>
 
-                <div class="black">
-                    <p><strong>奈费勒：</strong>那你为什么不这么做呢？</p>
-                </div>
+<div class="black shake-horizontal">
+    <p><strong>奈费勒：</strong>那你为什么不这么做呢？</p>
+</div>
 
                 <div class="sultan">
                     <p><strong>■■■：</strong>……</p>
                 </div>
 
-                <div class="black">
-                    <p><strong>■■■：</strong>你在挑衅我，奈费勒？</p>
-                </div>
+<div class="black shake-vertical">
+    <p><strong>■■■：</strong>你在挑衅我，奈费勒？</p>
+</div>
 
-                <div class="black">
-                    <p><strong>奈费勒：</strong>随你怎么想。</p>
-                </div>
+
+<!-- 第3个黑色框 - 加 class="black shake-diagonal" -->
+<div class="black shake-diagonal">
+    <p><strong>奈费勒：</strong>随你怎么想。</p>
+</div>
 
                 <div class="altu">
                     <p><strong>阿尔图：</strong>喂你要干嘛。哇哦。</p>
                 </div>
 
-                <div class="black">
-                    <p><strong>■■■：</strong>唔……！咳、呵呵……你这是什么意思呢？</p>
-                </div>
+
+<!-- 第4个黑色框 - 加 class="black shake-wave" -->
+<div class="black shake-wave">
+    <p><strong>■■■：</strong>唔……！咳、呵呵……你这是什么意思呢？</p>
+</div>
+
 
                 <div class="nefeller">
                     <p><strong>奈费勒：</strong>……</p>
@@ -593,9 +685,11 @@
                     <p><strong>■■■：</strong>羡慕？我也可以慷慨地赐你这种恩赐。</p>
                 </div>
 
-                <div class="black">
-                    <p><strong>阿尔图：</strong>用不着。</p>
-                </div>
+
+<div class="black shake-horizontal">
+    <p><strong>阿尔图：</strong>用不着。</p>
+</div>
+
 
                 <div class="altu">
                     <p><strong>阿尔图：</strong>想要的话我会自己拿的。</p>
@@ -709,6 +803,7 @@
                     <p><strong>奈费勒：</strong>我知道了。那么，下次见。</p>
                 </div>
             </div>
+
             <footer class="article-footer">
                 <div class="article-tags">
                     <span class="tag">苏丹的游戏</span>
