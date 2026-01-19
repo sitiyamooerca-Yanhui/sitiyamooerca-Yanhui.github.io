@@ -13,7 +13,6 @@
         /* 角色对话颜色样式 - 深色主题优化版 */
         .sultan {
             background: rgba(139, 122, 61, 0.12);
-            border-left: 3px solid #c9a961;
             color: #e8d4a0;
             padding: 1rem 1.2rem;
             margin: 0.8rem 0;
@@ -21,7 +20,6 @@
         }
         .nefeller {
             background: rgba(74, 125, 90, 0.12);
-            border-left: 3px solid #6b9d7a;
             color: #9dd4b0;
             padding: 1rem 1.2rem;
             margin: 0.8rem 0;
@@ -29,40 +27,87 @@
         }
         .altu {
             background: rgba(107, 143, 181, 0.12);
-            border-left: 3px solid #8ba8c7;
             color: #a8c4e0;
             padding: 1rem 1.2rem;
             margin: 0.8rem 0;
             border-radius: 4px;
         }
+        /* 黑色框 - 带抖动和闪烁效果 */
         .black {
-            background: rgba(20, 30, 45, 0.7);
-            border: 1px solid rgba(139, 159, 181, 0.3);
+            background: rgba(20, 30, 45, 0.85);
+            border: 1px solid rgba(139, 159, 181, 0.4);
             color: #e8eef5;
             padding: 1rem 1.2rem;
             margin: 0.8rem 0;
             border-radius: 4px;
             max-width: 85%;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            animation: blackBoxGlitch 4s ease-in-out infinite;
         }
+        
+        /* 黑色框的抖动闪烁动画 */
+        @keyframes blackBoxGlitch {
+            0%, 90%, 100% {
+                transform: translate(0, 0);
+                opacity: 1;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            }
+            91% {
+                transform: translate(-2px, 1px);
+                opacity: 0.9;
+                box-shadow: 0 0 15px rgba(139, 159, 181, 0.2);
+            }
+            92% {
+                transform: translate(2px, -1px);
+                opacity: 0.95;
+            }
+            93% {
+                transform: translate(-1px, 2px);
+                opacity: 0.85;
+            }
+            94% {
+                transform: translate(1px, -2px);
+                opacity: 1;
+            }
+            95% {
+                transform: translate(0, 0);
+                opacity: 0.9;
+                box-shadow: 0 0 20px rgba(139, 159, 181, 0.3);
+            }
+        }
+        
         .grey {
             background: rgba(139, 159, 181, 0.06);
-            border-left: 3px solid rgba(139, 159, 181, 0.25);
             color: #a8b8cc;
             padding: 1rem 1.2rem;
             margin: 0.8rem 0;
             border-radius: 4px;
         }
-        /* 角色名称颜色 */
-        .c-sultan {
-            color: #c9a961;
+        
+        /* 角色名称颜色 - 统一！ */
+        .c-sultan,
+        .sultan .c-sultan {
+            color: #e8d4a0;
         }
-        .c-nefeller {
+        .c-nefeller,
+        .nefeller .c-nefeller {
             color: #9dd4b0;
         }
-        .c-altu {
+        .c-altu,
+        .altu .c-altu {
             color: #a8c4e0;
         }
+        /* 灰色框中的角色名称 */
+        .grey .c-sultan {
+            color: #d4c699;
+        }
+        .grey .c-nefeller {
+            color: #8bb89d;
+        }
+        .grey .c-altu {
+            color: #9cb5d0;
+        }
+        
         /* 对话框内的段落样式 */
         .article-content .sultan p,
         .article-content .nefeller p,
@@ -73,6 +118,7 @@
             margin-bottom: 0;
             line-height: 1.75;
         }
+        
         /* 对话者姓名加粗 */
         .sultan strong,
         .nefeller strong,
@@ -113,8 +159,7 @@
             <div class="article-content">
                 <blockquote>
                     <p>长夜将尽。</p>
-
-                </blockquote>
+                   </blockquote>
 
                 <div class="grey">
                     <p><strong>■■■：</strong>……你又出现在这里，究竟是为了什么呢？</p>
@@ -664,7 +709,6 @@
                     <p><strong>奈费勒：</strong>我知道了。那么，下次见。</p>
                 </div>
             </div>
-
             <footer class="article-footer">
                 <div class="article-tags">
                     <span class="tag">苏丹的游戏</span>
