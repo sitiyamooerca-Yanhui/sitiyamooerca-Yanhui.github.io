@@ -178,7 +178,7 @@
 
             <!-- 题图 -->
             <div class="article-cover">
-                <img src="../images/fanworks/tetris-cover.png" alt="无底俄罗斯方块 - 展览中的计算机屏幕显示着游戏初始界面">
+                <img src="../images/tetris-cover.png" alt="无底俄罗斯方块 - 展览中的计算机屏幕显示着游戏初始界面">
             </div>
 
             <div class="article-content">
@@ -357,7 +357,7 @@
         pRow = -2; pCol = 3;
         playing = true; done = false;
         startBtn.classList.add('hidden');
-        touch.classList.add('active');
+ 
         hint.textContent = '← → 移动';
         render();
         setTimeout(function() {
@@ -370,7 +370,6 @@
         clearInterval(timer); timer = null;
         done = true; playing = false;
         render();
-        touch.classList.remove('active');
       }
 
       document.addEventListener('keydown', function(e) {
@@ -387,6 +386,7 @@
 
       render();
       renderNext();
+       touch.classList.add('active');
     })();
     </script>
 </body>
