@@ -12,9 +12,11 @@
     <style>
       /* ===== Inline Tetris Game Styles ===== */
       .article-cover {
-        margin: 2em auto 2.5em;
+        margin: 0 auto 2.5em;
         max-width: 100%;
         text-align: center;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out 0.3s forwards;
       }
       .article-cover img {
         max-width: 100%;
@@ -369,7 +371,6 @@
         done = true; playing = false;
         render();
         touch.classList.remove('active');
-        hint.textContent = '';
       }
 
       document.addEventListener('keydown', function(e) {
